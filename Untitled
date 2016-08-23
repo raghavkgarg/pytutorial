@@ -1,0 +1,7 @@
+import pandas as pd
+import numpy as np
+SALES=pd.read_csv("sample-sales.csv")
+SALES.head()
+
+report = SALES.pivot_table(values=['quantity'],index=['Account Name'],columns=['category'], aggfunc=np.sum)
+report.head(n=10)
